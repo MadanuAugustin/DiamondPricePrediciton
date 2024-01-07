@@ -8,6 +8,8 @@ from src.logger import logging
 
 from sklearn.model_selection import train_test_split
 
+from src.components.data_transformation_file import Transformation
+
 
 class DataLoading:
     def __init__(self):
@@ -42,4 +44,7 @@ class DataLoading:
 
 if __name__ == '__main__':
     myobj = DataLoading()
-    myobj.initiate_data_ingestion()
+    train_set, test_set = myobj.initiate_data_ingestion()
+
+    data_transformation = Transformation()
+    train_arr, test_arr = data_transformation.transforming_data(train_set, test_set)
