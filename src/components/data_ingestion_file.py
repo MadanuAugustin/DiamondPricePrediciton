@@ -10,6 +10,8 @@ from sklearn.model_selection import train_test_split
 
 from src.components.data_transformation_file import Transformation
 
+from src.components.model_training_file import Model_trainer
+
 
 class DataLoading:
     def __init__(self):
@@ -48,3 +50,6 @@ if __name__ == '__main__':
 
     data_transformation = Transformation()
     train_arr, test_arr = data_transformation.transforming_data(train_set, test_set)
+
+    modeltrained = Model_trainer()
+    print(modeltrained.initiate_model_training(train_arr, test_arr))
