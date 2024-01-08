@@ -70,7 +70,7 @@ class Model_trainer:
                 raise my_exception("No best model found...!")
             
             logging.info('Best model found...!')
-
+            logging.info('saving the model as a pickle file...!')
             save_preprocessor_obj(
                 file_path="pickle_files\\model.pkl",
                 obj = best_model

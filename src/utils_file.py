@@ -29,11 +29,15 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
         for i in range(len(list(models))):
             model = list(models.values())[i]
             para = params[list(models.keys())[i]]
+            logging.info('Model hyperparameter tunning is under process...!')
             gs = GridSearchCV(model, para, cv=3)
             gs.fit(X_train, y_train)
             model.set_params(**gs.best_params_)
+            logging.info('Found the best Hyperparameter...!')
             
+            logging.info('Model is under training...!')
             model.fit(X_train, y_train)
+            logging.info('model is predicting the x_test...!')
             predicted = model.predict(X_test)
             test_model_score = r2_score(y_test, predicted)
             report[list(models.keys())[i]] = test_model_score
