@@ -14,3 +14,6 @@
 ### z
 
 # FINAL OUTPUT
+
+https://github.com/MadanuAugustin/DiamondPricePrediciton/assets/119403639/617fb13e-22a7-438d-ac5b-2daf5c8cdb81
+
